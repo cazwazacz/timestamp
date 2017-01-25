@@ -42,6 +42,8 @@ app.get('/:date', function (req, res) {
   res.json(dateObj);
 })
 
-app.listen(3000, function () {
-  console.log('Timestamp app listening on port 3000!');
+var port = process.env.PORT || 3000;
+
+app.listen(port, function () {
+  console.log('Timestamp app listening on port ' + port);
 })

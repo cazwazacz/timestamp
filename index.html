@@ -2,13 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Express App</title>
+    <title>Timestamp Microservice</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
-    <script type="text/javascript" src="/js/script.js">
+    <script>
+    $(document).ready(function(){
+      var monthsArr = ["January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"];
+      var now = new Date();
+
+      $("#natural").html(monthsArr[now.getUTCMonth()] + " " + now.getDate() + ", " + now.getFullYear());
+      $("#unix").html(Math.round(now.getTime() / 1000));
+
+    })
     </script>
-    <h1>Fuck the world!</h1>
+    <div class="main">
+    <h1>Timestamp Microservice</h1>
+    <p>
+      Append a unix timestamp or a natural date to the
+      root directory to retrieve both
+      unix time and natural time in JSON format.
+    </p>
+    <p>
+      Try it using today's date in either natural or unix format:<br><br>
+      Natural
+      <div class="times" id="natural">
+      </div><br>
+      Unix<br><br>
+      <div class="times" id="unix">
+      </div>
+    </p>
+  </div>
   </body>
 </html>

@@ -21,7 +21,7 @@ natural: monthsArr[now.getUTCMonth()] + " " + now.getDate() + " " + now.getFullY
 app.use(express.static('public'));
 
 app.get('/', function (req, res){
-  res.send("Hi there!");
+  res.sendFile(__dirname + '/index.html');
 })
 
 app.get('/:date', function (req, res) {

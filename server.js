@@ -20,6 +20,10 @@ natural: monthsArr[now.getUTCMonth()] + " " + now.getDate() + " " + now.getFullY
 
 app.use(express.static('public'));
 
+app.get('/', function (req, res){
+  res.send("Hi there!");
+})
+
 app.get('/:date', function (req, res) {
   var date = req.params.date;
   var rawDate;
